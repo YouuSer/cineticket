@@ -22,7 +22,9 @@ use Inertia\Inertia;
 //        'canRegister' => Route::has('register'),
 //    ]);
 //});
-Route::get('/', [MovieController::class, 'index']);
+Route::get('/', [MovieController::class, 'index'])->name('movie.index');
+Route::get('/movie/{id}', [MovieController::class, 'show'])->name('movie.show');
+
 
 
 Route::get('/dashboard', function () {

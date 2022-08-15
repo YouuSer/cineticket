@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 
 defineProps({
@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head title="Home" />
 
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
         <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -27,13 +27,17 @@ defineProps({
             <div class="mx-12">
                 <h1 class="text-2xl my-4 uppercase font-semibold">In theater</h1>
                 <ul v-for="movie in intheater" :key="movie.id">
-                    <li>{{ movie.title }}</li>
+                    <li>
+                        <Link :href="route('movie.show', movie.id)">{{ movie.title }}</Link>
+                    </li>
                 </ul>
             </div>
             <div class="mx-12">
                 <h1 class="text-2xl my-4 uppercase font-semibold">Upcoming</h1>
                 <ul v-for="movie in upcoming" :key="movie.id">
-                    <li>{{ movie.title }}</li>
+                    <li>
+                        <Link :href="route('movie.show', movie.id)">{{ movie.title }}</Link>
+                    </li>
                 </ul>
             </div>
         </div>
