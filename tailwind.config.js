@@ -13,6 +13,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                'permanent-marker': ['Permanent Marker', ...defaultTheme.fontFamily.sans],
             },
         },
     },

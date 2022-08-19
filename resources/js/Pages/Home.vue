@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 
-defineProps({
+const props = defineProps({
     canLogin: Boolean,
     canRegister: Boolean,
     intheater: Object,
@@ -23,7 +23,7 @@ defineProps({
             </template>
         </div>
 
-        <div class="flex text-white">
+        <div class="flex dark:text-white">
             <div class="mx-12">
                 <h1 class="text-2xl my-4 uppercase font-semibold">In theater</h1>
                 <ul v-for="movie in intheater" :key="movie.id">
