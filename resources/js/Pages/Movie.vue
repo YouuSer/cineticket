@@ -18,10 +18,12 @@ const props = defineProps({
         </Link>
         <div>
             <div class="text-center">
-                <h1 class="text-3xl font-bold font-permanent-marker my-6">{{ movie.title }}</h1>
+                <h1 class="text-5xl font-bold font-permanent-marker my-6">{{ movie.title }}</h1>
                 <div class="flex justify-around">
                     <Bookmark width="2em" height="2em"/>
-                    <Play width="2em" height="2em"/>
+                    <a :href="movie.trailer" target="_blank">
+                        <Play width="2em" height="2em"/>
+                    </a>
                     <Ticket width="2em" height="2em"/>
                 </div>
             </div>
